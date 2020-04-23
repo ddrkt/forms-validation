@@ -17,8 +17,6 @@ class FormSerializers(serializers.Serializer):
         return value
 
     def validate_cardn(self, value):
-        import pdb
-        pdb.set_trace()
         if not value.isdecimal():
             raise serializers.ValidationError("card number is not valid")
         api_key = getattr(settings, 'CARD_INFO_API_KEY', None)
