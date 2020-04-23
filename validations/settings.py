@@ -28,6 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Cardinfo settings
+
+CARD_INFO_API_KEY = 'ce4112cd305c64e581ca85075fa92ce3'
+
+ALLOWED_BANKS = [
+    'Sberbank',
+    'Alfa-Bank',
+]
 
 # Application definition
 

@@ -15,10 +15,23 @@ submitButton.onclick = function(e) {
         method: 'POST',
         data: values,
         success: (response) => {
-            debugger;
+            let validBlock = $(".form-is-valid");
+            validBlock[0].innerHTML = response.result;
+            validBlock.show();
+            validBlock.fadeOut(10000);
         },
         error: (response) => {
-            debugger;
+            for (let key in response.responseJSON) {
+                let errorMessage = response.responseJSON[key];
+                let errorBlock = $(`input[name="${key}"]`).siblings('.valid-message');
+                let temp = '';
+                errorMessage.forEach((item) => {
+                    temp += `<li>${item}</li>`;
+                });
+                errorBlock[0].innerHTML = temp;
+                errorBlock.show();
+                errorBlock.fadeOut(10000);
+            };
         }
     });
 }

@@ -1,0 +1,8 @@
+.hidden {
+    display: none;
+}
+
+body {
+  font-size: 30px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
